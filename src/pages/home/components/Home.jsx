@@ -6,7 +6,7 @@ export const Home = () => {
     const goTo = useNavigate();
     return (
         <div>
-            welcome Home
+          
         </div>
     );
 };
