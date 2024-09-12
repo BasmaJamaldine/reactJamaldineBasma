@@ -5,7 +5,11 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        'tran': 'transform transition duration-600 ease-in-out ',
+      }
+    },
   },
   plugins: [],
 }
