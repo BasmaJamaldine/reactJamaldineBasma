@@ -11,15 +11,17 @@ import SignUp from "./pages/login/components/signup"
 import SignIn from "./pages/signUp/components/SignIn"
 import { MyProvider } from "./context";
 import Shop from "./pages/shop/components/Shop";
+import { useState } from "react";
 function App() {
+  const [cart, setCart] = useState([]);
   return (
     <>
     <MyProvider>
-    <NavBar/>
+    <NavBar cart={cart}/>
     <Routes>
       <Route path="/" element={<Home />} /><Route/>
       <Route path="/about" element={<About />} /><Route/>
-      <Route path="/shop" element={<Shop/>} /><Route/>
+      <Route path="/shop" element={<Shop setCart={setCart}/>} /><Route/>
       <Route path="/shop/:id" element={<DetShop />} /><Route/>
       <Route path="/blog" element={<Blog/>} /><Route/>
       <Route path="/contact" element={<Contact/>} /><Route/>

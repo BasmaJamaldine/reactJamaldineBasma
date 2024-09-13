@@ -6,7 +6,8 @@ import { Images } from '../../../assets';
 import { images } from '../../../constants';
 
 const Shop = () => {
-    let navigate = useNavigate();
+    let goTo = useNavigate();
+    const [cart, setCart] = useState([]);
     const [selectedFilter, setSelectedFilter] = useState("");
     const [selectedColors, setSelectedColors] = useState([]);
 
@@ -20,6 +21,9 @@ const Shop = () => {
         } else {
             setSelectedColors([...selectedColors, color]); 
         }
+    };
+    const addToCart = (item) => {
+        setCart([...cart, item]);
     };
     const filteredData = data.filter(item => {
         const matchesFilter = selectedFilter ? item.type.toLowerCase() === selectedFilter.toLowerCase() : true;
@@ -121,7 +125,8 @@ const Shop = () => {
                                         <img src={images[e.affiche]} alt={e.name} className='w-[100%] transition-all duration-300 ease-in-out group-hover:brightness-75' />
                                         <div className='absolute top-[90%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
                                             <button className='bg-white py-3 px-12 w-[210px] rounded-full text-black transition duration-500 hover:bg-[#e65540] hover:text-[#fff]'
-                                            onClick={() => goTo(`/cart/${item.id}`)}>ADD TO CART</button>
+                                            onClick={() => addToCart(e)}
+                                            >ADD TO CART</button>
                                         </div>
                                     </div>
                                     <div className='pt-5'>
