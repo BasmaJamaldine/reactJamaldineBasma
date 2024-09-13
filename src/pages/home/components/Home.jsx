@@ -11,7 +11,7 @@ import { images } from '../../../constants';
 export const Home = () => {
     const goTo = useNavigate();
    
-    const sliderRef1 = React.useRef(null); // 
+    const sliderRef1 = React.useRef(null); 
     const sliderRef2 = React.useRef(null);
 
 
@@ -135,7 +135,6 @@ export const Home = () => {
           </div>
           <div className="relative w-full mb-5">
                 <Slider ref={sliderRef2} className="overflow-hidden " {...settings}>
-                    {/* Slide 1 - Produits */}
                     <div className="relative flex w-[100vw] h-[80vh] items-center   ">
                         <div className='flex  w-[100%] items-center justify-center gap-5'>
                             {data.slice(0, 4).map((item) => (
@@ -149,15 +148,13 @@ export const Home = () => {
                                             ADD TO CART
                                         </button>
                                     </div>
-                                    <p className="text-black pt-6 text-lg opacity-70">{item.title}</p>
+                                    <p className="text-black pt-6 text-lg opacity-70 hover:text-red-600" onClick={() =>  goTo(`/shop/${item.id}`)}>{item.title}</p>
                                     <p className="text-black text-lg opacity-70 ">{item.price}</p>
                                     
                                 </div>
                             ))}
                         </div>
                     </div>
-
-                    {/* Slide 2 - Produits */}
                     <div className="relative w-full h-[80vh] items-center ">
                         <div className='flex  w-[100%] items-center justify-center gap-5'>
                             {data.slice(4,8).map((item) => (
@@ -178,19 +175,56 @@ export const Home = () => {
                         </div>
                     </div>
                 </Slider>
-
-       {/* Next  Prev buttons  */}
-      <button 
-        onClick={() => handlePrev(sliderRef2)} 
+      <button onClick={() => handlePrev(sliderRef2)} 
         className="absolute left-5 top-1/2 transform -translate-y-1/2 text-black opacity-55 text-3xl ">
         <GrFormPrevious/>
       </button>
-      <button 
-       onClick={() => handleNext(sliderRef2)} 
+      <button onClick={() => handleNext(sliderRef2)} 
         className="absolute right-5 top-1/2 transform -translate-y-1/2 text-black opacity-55 text-3xl  ">
         <MdOutlineNavigateNext />
       </button>
     </div>
+    <div>
+<div className="w-full py-16 bg-white text-center">
+
+      <h2 className="text-2xl md:text-3xl font-bold mb-16">
+        @ FOLLOW US ON INSTAGRAM
+      </h2>
+
+
+      <div className="flex flex-col md:flex-row justify-center items-center max-w-4xl mx-auto space-y-8 md:space-y-0 md:space-x-10 text-gray-700">
+
+        <div className="flex flex-col items-center">
+          <h3 className="text-xl font-semibold mb-2">Free Delivery Worldwide</h3>
+          <p className="text-gray-500 italic text-sm">
+            Mirum est notare quam littera gothica
+          </p>
+        </div>
+
+
+        <div className=" h-16 border-l border-gray-300"></div>
+
+
+        <div className="flex flex-col items-center">
+          <h3 className="text-xl font-semibold mb-2">30 Days Return</h3>
+          <p className="text-gray-500 italic text-sm">
+            Simply return it within 30 days for an exchange.
+          </p>
+        </div>
+
+
+        <div className="hidden md:block h-16 border-l border-gray-300"></div>
+
+
+        <div className="flex flex-col items-center">
+          <h3 className="text-xl font-semibold mb-2">Store Opening</h3>
+          <p className="text-gray-500 italic text-sm">
+            Shop open from Monday to Sunday
+          </p>
+        </div>
+      </div>
+    </div>
+</div>
         </div>
     );
 };

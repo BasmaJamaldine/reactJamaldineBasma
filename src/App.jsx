@@ -4,6 +4,8 @@ import { About } from "./pages/about/components/About"
 import "./index.css"
 import NavBar from "./layout/NavBar";
 import Footer from "./layout/footer";
+import { Shop } from "./pages/shop/components/Shop";
+import DetShop from "./pages/detaille/components/DetShop";
 function App() {
   return (
     <>
@@ -11,7 +13,8 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} /><Route/>
       <Route path="/about" element={<About />} /><Route/>
-      <Route path="path" element={<path />} />
+      <Route path="/shop" element={<Shop/>} /><Route/>
+      <Route path="/shop/:id" element={<DetShop />} /><Route/>
     </Routes>
     <Footer/>
     
