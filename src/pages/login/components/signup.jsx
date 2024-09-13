@@ -105,7 +105,7 @@ const SignUp = () => {
           </button>
           <p className="text-gray-600">
             or
-            <span className="text-lg text-gray-600 hover:text-[#e65540]">
+            <span className="text-lg text-gray-600 hover:text-[#e65540] ml-4">
               Return to Store
             </span>
           </p>

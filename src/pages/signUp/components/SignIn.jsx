@@ -42,11 +42,8 @@ const SignIn = () => {
             date on an order's status, and keep track of the orders you have
             previously made.
           </p>
-          {/* Corrigé ici */}
-          <button
-            onClick={() => navigate("/signup")}
-            className="block w-[15vw] text-center bg-black px-14 py-3 font-medium text-white"
-          >
+          <button onClick={() => navigate("/signup")}
+            className="block w-[15vw] text-center bg-black px-14 py-3 font-medium text-white">
             Continue
           </button>
         </div>
@@ -69,41 +66,31 @@ const SignIn = () => {
             <label htmlFor="email" className="block text-gray-700 mb-2">
               Email
             </label>
-            <input
-              type="email"
-              id="email"
-              className="w-full p-2 border border-gray-300 rounded"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+            <input type="email"
+              id="email"className="w-full p-2 border border-gray-300 rounded"
+              placeholder="Email"value={email}onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="mb-2">
             <label htmlFor="password" className="block text-gray-700 mb-2">
               Password
             </label>
-            <input
-              type="password"
-              id="password"
-              className="w-full p-2 border border-gray-300 rounded"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+            <input type="password" id="password" className="w-full p-2 border border-gray-300 rounded"
+              value={password}onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <p className="text-lg text-gray-600 hover:text-[#e65540]">
             Forgot your password?
           </p>
-          <div className="flex gap-2">
+          <div className="flex gap-2 items-center ">
             <button
               className="block w-[15vw] text-center bg-black px-14 py-3 font-medium text-white"
-              onClick={handleLogin}
-            >
+              onClick={handleLogin}>
               Sign In
             </button>
             <p className="text-gray-600">
-              or{" "}
-              <span className="text-lg text-gray-600 hover:text-[#e65540]">
+              or
+              <span className="text-lg text-gray-600 hover:text-[#e65540] ml-4">
                 Return to Store
               </span>
             </p>
