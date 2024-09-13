@@ -7,6 +7,7 @@ import Footer from "./layout/footer";
 import { Shop } from "./pages/shop/components/Shop";
 import DetShop from "./pages/detaille/components/DetShop";
 import Blog from "./pages/blog/components/Blog"
+import Contact from "./pages/contact/components/Contact";
 function App() {
   return (
     <>
@@ -17,6 +18,7 @@ function App() {
       <Route path="/shop" element={<Shop/>} /><Route/>
       <Route path="/shop/:id" element={<DetShop />} /><Route/>
       <Route path="/blog" element={<Blog/>} /><Route/>
+      <Route path="/contact" element={<Contact/>} /><Route/>
     </Routes>
     <Footer/>
     
