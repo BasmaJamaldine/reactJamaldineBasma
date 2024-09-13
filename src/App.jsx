@@ -12,16 +12,18 @@ import SignIn from "./pages/signUp/components/SignIn"
 import { MyProvider } from "./context";
 import Shop from "./pages/shop/components/Shop";
 import { useState } from "react";
+import { Cart } from "./pages/cart/components/cart";
 function App() {
   const [cart, setCart] = useState([]);
+  const cartItems = cart.length;
   return (
     <>
     <MyProvider>
-    <NavBar cart={cart}/>
+    <NavBar cartItems={cartItems}/>
     <Routes>
       <Route path="/" element={<Home />} /><Route/>
       <Route path="/about" element={<About />} /><Route/>
-      <Route path="/shop" element={<Shop setCart={setCart}/>} /><Route/>
+      <Route path="/shop" element={<Shop setCart={setCart} />} /><Route/>
       <Route path="/shop/:id" element={<DetShop />} /><Route/>
       <Route path="/blog" element={<Blog/>} /><Route/>
       <Route path="/contact" element={<Contact/>} /><Route/>
