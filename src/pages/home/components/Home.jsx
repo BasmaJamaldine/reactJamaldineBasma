@@ -133,7 +133,7 @@ export const Home = () => {
     </div>
   </div>
 </div>
-<div className="relative w-full mb-5">
+          <div className="relative w-full mb-5">
     <Slider ref={sliderRef2} className="overflow-hidden" {...settings}>
         {/* Premier slide */}
         <div className="relative flex w-[100vw] h-[80vh] items-center">
