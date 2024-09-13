@@ -25,6 +25,7 @@ function App() {
       <Route path="/contact" element={<Contact/>} /><Route/>
       <Route path="/signin" element={<SignIn/>} /><Route/>
       <Route path="/signup" element={<SignUp/>} /><Route/>
+      <Route path="/cart/:id" element={<Cart />} /><Route/>
     </Routes>
     <Footer/>
     </MyProvider>

@@ -120,7 +120,8 @@ const Shop = () => {
                                     <div className='relative group'>
                                         <img src={images[e.affiche]} alt={e.name} className='w-[100%] transition-all duration-300 ease-in-out group-hover:brightness-75' />
                                         <div className='absolute top-[90%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-                                            <button className='bg-white py-3 px-12 w-[210px] rounded-full text-black transition duration-500 hover:bg-[#e65540] hover:text-[#fff]'>ADD TO CART</button>
+                                            <button className='bg-white py-3 px-12 w-[210px] rounded-full text-black transition duration-500 hover:bg-[#e65540] hover:text-[#fff]'
+                                            onClick={() => goTo(`/cart/${item.id}`)}>ADD TO CART</button>
                                         </div>
                                     </div>
                                     <div className='pt-5'>
