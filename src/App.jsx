@@ -4,13 +4,13 @@ import { About } from "./pages/about/components/About"
 import "./index.css"
 import NavBar from "./layout/NavBar";
 import Footer from "./layout/footer";
-import { Shop } from "./pages/shop/components/Shop";
 import DetShop from "./pages/detaille/components/DetShop";
 import Blog from "./pages/blog/components/Blog"
 import Contact from "./pages/contact/components/Contact";
 import SignUp from "./pages/login/components/signup"
 import SignIn from "./pages/signUp/components/SignIn"
 import { MyProvider } from "./context";
+import Shop from "./pages/shop/components/Shop";
 function App() {
   return (
     <>
