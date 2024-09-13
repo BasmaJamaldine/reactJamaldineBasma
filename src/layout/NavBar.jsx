@@ -20,7 +20,7 @@ const NavBar = () => {
                 <div className='active:text-red-600  hover:border-b-2 hover:border-black'><a href=""><Link to={"/contact"} >Contact</Link></a></div>
             </div>
             <div className='flex gap-5 text-4xl text-gray-500 opacity-1'>
-                <div className='border-e-4 pe-6'><Link to={"/"} ><LuUserCircle /></Link></div>
+                <div className='border-e-4 pe-6'><Link to={"/signin"} ><LuUserCircle /></Link></div>
                 <div><FaShopify />
                 </div>
 

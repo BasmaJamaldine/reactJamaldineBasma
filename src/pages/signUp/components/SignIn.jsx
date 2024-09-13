@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { MyAppContext } from "../../../context";
 
-
-const SignUp = () => {
-  const { dataProfile, test } = MyAppContext();
+const SignIn = () => {
+  const { dataProfile } = MyAppContext();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loginMessage, setLoginMessage] = useState(""); 
+  const [loginMessage, setLoginMessage] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
@@ -20,9 +19,7 @@ const SignUp = () => {
     if (user) {
       setLoginMessage("Login successful!");
       console.log("Logged in user:", user);
-      navigate("/")
-
-      
+      navigate("/");
     } else {
       setLoginMessage("Invalid email or password. Please try again.");
     }
@@ -45,7 +42,11 @@ const SignUp = () => {
             date on an order's status, and keep track of the orders you have
             previously made.
           </p>
-          <button onClick={navigate("/register")} className="block w-[15vw] text-center bg-black px-14 py-3 font-medium text-white">
+          {/* Corrigé ici */}
+          <button
+            onClick={() => navigate("/signup")}
+            className="block w-[15vw] text-center bg-black px-14 py-3 font-medium text-white"
+          >
             Continue
           </button>
         </div>
@@ -113,4 +114,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default SignIn;

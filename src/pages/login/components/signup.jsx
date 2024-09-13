@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+
 import { useNavigate } from "react-router-dom";
 import { MyAppContext } from "../../../context";
+import { useState } from "react";
 
-const Login = () => {
+const SignUp = () => {
   const { dataProfile, setDataProfile } = MyAppContext();
   const navigate = useNavigate();
 
@@ -24,7 +25,6 @@ const Login = () => {
       password: passwordInputValue,
     };
 
-    // Validation: All fields must be non-empty and valid
     if (!firstInputValue) {
       setValidationMessage("First name is required.");
       return;
@@ -45,9 +45,7 @@ const Login = () => {
       return;
     } else {
       setDataProfile([...dataProfile, newProfile]);
-      navigate("/", {
-        state: { notificationMessage: "Registration Successful!" },
-      });
+      navigate("/signin");
     }
   };
 
@@ -61,56 +59,37 @@ const Login = () => {
           <label htmlFor="firstName" className="block text-gray-700 mb-2">
             First Name
           </label>
-          <input
-            type="text"
-            id="firstName"
+          <input type="text"id="firstName"
             className="w-full p-2 border border-gray-300 rounded"
-            placeholder="First Name"
-            value={firstInputValue}
-            onChange={(e) => setFirstInputValue(e.target.value)}
-          />
+            placeholder="First Name"value={firstInputValue}
+            onChange={(e) => setFirstInputValue(e.target.value)} />
         </div>
 
         <div className="mb-4">
           <label htmlFor="lastName" className="block text-gray-700 mb-2">
             Last Name
           </label>
-          <input
-            type="text"
-            id="lastName"
-            className="w-full p-2 border border-gray-300 rounded"
-            placeholder="Last Name"
-            value={lastInputValue}
-            onChange={(e) => setLastInputValue(e.target.value)}
-          />
+          <input type="text"id="lastName"className="w-full p-2 border border-gray-300 rounded"
+            placeholder="Last Name"value={lastInputValue}
+            onChange={(e) => setLastInputValue(e.target.value)}/>
         </div>
 
         <div className="mb-4">
           <label htmlFor="email" className="block text-gray-700 mb-2">
             Email
           </label>
-          <input
-            type="email"
-            id="email"
-            className="w-full p-2 border border-gray-300 rounded"
-            placeholder="Email"
-            value={emailInputValue}
-            onChange={(e) => setEmailInputValue(e.target.value)}
-          />
+          <input type="email"id="email"className="w-full p-2 border border-gray-300 rounded"
+            placeholder="Email"value={emailInputValue}
+            onChange={(e) => setEmailInputValue(e.target.value)} />
         </div>
 
         <div className="mb-2">
           <label htmlFor="password" className="block text-gray-700 mb-2">
             Password
           </label>
-          <input
-            type="password"
-            id="password"
-            className="w-full p-2 border border-gray-300 rounded"
-            placeholder="Password"
-            value={passwordInputValue}
-            onChange={(e) => setPasswordInputValue(e.target.value)}
-          />
+          <input type="password"id="password"
+            className="w-full p-2 border border-gray-300 rounded" placeholder="Password"
+            value={passwordInputValue}onChange={(e) => setPasswordInputValue(e.target.value)} />
         </div>
 
         {validationMessage && (
@@ -121,7 +100,7 @@ const Login = () => {
           <button
             type="submit"
             className="block w-[15vw] text-center bg-black px-14 py-3 font-medium text-white"
-          >
+>
             Create
           </button>
           <p className="text-gray-600">
@@ -136,4 +115,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;

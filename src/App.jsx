@@ -8,8 +8,8 @@ import { Shop } from "./pages/shop/components/Shop";
 import DetShop from "./pages/detaille/components/DetShop";
 import Blog from "./pages/blog/components/Blog"
 import Contact from "./pages/contact/components/Contact";
-import SignUp from "./pages/signUp/components/SignUp"
-import Login from "./pages/login/components/Login"
+import SignUp from "./pages/login/components/signup"
+import SignIn from "./pages/signUp/components/SignIn"
 import { MyProvider } from "./context";
 function App() {
   return (
@@ -23,8 +23,8 @@ function App() {
       <Route path="/shop/:id" element={<DetShop />} /><Route/>
       <Route path="/blog" element={<Blog/>} /><Route/>
       <Route path="/contact" element={<Contact/>} /><Route/>
-      <Route path="/signUp" element={<SignUp/>} /><Route/>
-      <Route path="/login" element={<Login/>} /><Route/>
+      <Route path="/signin" element={<SignIn/>} /><Route/>
+      <Route path="/signup" element={<SignUp/>} /><Route/>
     </Routes>
     <Footer/>
     </MyProvider>
