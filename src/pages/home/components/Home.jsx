@@ -101,39 +101,38 @@ export const Home = () => {
         <MdOutlineNavigateNext />
       </button>
     </div>
-          <div className='flex  justify-center justify-items-center gap-5 mb-9'>
-            <div className='flex flex-col gap-5'>
-           <div className='w-[25vw] relative overflow-hidden'>
-            <img src={Images.robe} alt="" className='hover:scale-110 duration-700' />
-           <button className='bg-white py-2 px-10 text-xl shadow-xl absolute bottom-3 left-[50%] translate-x-[-50%]  hover:bg-[#e65540] hover:text-white'>DRESSES</button></div>
-          <div className='relative overflow-hidden'> 
-            
-        <img src={Images.lunette} alt="" className='w-[25vw] h-[40vh]  hover:scale-110 duration-700' />
-           <button className='bg-white py-2 px-10 text-xl shadow-xl absolute bottom-3 left-[50%] translate-x-[-50%]  hover:bg-[#e65540] hover:text-white'>SUNGLASSES</button>
-           </div>
-            </div>
-            <div className='flex flex-col gap-5'>
-           <div  className='relative overflow-hidden'>
-            <img src={Images.watch} alt=""className='w-[25vw] h-[40vh] hover:scale-110 duration-700' />
-            <button className='bg-white py-2 px-8 text-xl shadow-xl absolute bottom-3 left-[50%] translate-x-[-50%]  hover:bg-[#e65540] hover:text-white '>WATCHES</button>
-            </div>
-           <div className='w-[25vw] relative overflow-hidden'>
-            <img src={Images.shoes} alt=""  className='hover:scale-110 duration-700'/>
-            <button className='bg-white py-2 px-8 text-xl shadow-xl absolute bottom-3 left-[50%] translate-x-[-50%]  hover:bg-[#e65540] hover:text-white '>FOOTERWEAR</button>
-            </div>
-            </div>
-            <div className='flex flex-col gap-5'>
-           <div className='w-[25vw] relative overflow-hidden'>
-            <img src={Images.bags} alt="" className='hover:scale-110 duration-700' />
-            <button className='bg-white py-2 px-8 text-xl shadow-xl absolute bottom-3 left-[50%] translate-x-[-50%]  hover:bg-[#e65540] hover:text-white'>BAGS</button>
-            </div>
-           <div className='relative overflow-hidden' >
-            <img src={Images.ass} alt="" className='w-[25vw] h-[40vh] hover:scale-110 duration-700' />
-            <button className='bg-white py-2 px-8 text-xl shadow-xl absolute bottom-3 left-[50%] translate-x-[-50%]  hover:bg-[#e65540] hover:text-white'>ASSECOIRES</button>
-            </div>
-            </div>
-          
-          </div>
+    <div className='flex flex-col lg:flex-row justify-center gap-5 mb-9 px-4 lg:px-16'>
+  <div className='flex flex-col gap-5 w-full lg:w-[25vw]'>
+    <div className='w-full relative overflow-hidden'>
+      <img src={Images.robe} alt="" className='hover:scale-110 duration-700 w-full' />
+      <button className='bg-white py-2 px-10 text-xl shadow-xl absolute bottom-3 left-[50%] translate-x-[-50%] hover:bg-[#e65540] hover:text-white'>DRESSES</button>
+    </div>
+    <div className='relative overflow-hidden w-full'>
+      <img src={Images.lunette} alt="" className='hover:scale-110 duration-700 w-full h-[40vh]' />
+      <button className='bg-white py-2 px-10 text-xl shadow-xl absolute bottom-3 left-[50%] translate-x-[-50%] hover:bg-[#e65540] hover:text-white'>SUNGLASSES</button>
+    </div>
+  </div>
+  <div className='flex flex-col gap-5 w-full lg:w-[25vw]'>
+    <div className='relative overflow-hidden w-full'>
+      <img src={Images.watch} alt="" className='hover:scale-110 duration-700 w-full h-[40vh]' />
+      <button className='bg-white py-2 px-8 text-xl shadow-xl absolute bottom-3 left-[50%] translate-x-[-50%] hover:bg-[#e65540] hover:text-white'>WATCHES</button>
+    </div>
+    <div className='relative overflow-hidden w-full'>
+      <img src={Images.shoes} alt="" className='hover:scale-110 duration-700 w-full' />
+      <button className='bg-white py-2 px-8 text-xl shadow-xl absolute bottom-3 left-[50%] translate-x-[-50%] hover:bg-[#e65540] hover:text-white'>FOOTERWEAR</button>
+    </div>
+  </div>
+  <div className='flex flex-col gap-5 w-full lg:w-[25vw]'>
+    <div className='relative overflow-hidden w-full'>
+      <img src={Images.bags} alt="" className='hover:scale-110 duration-700 w-full' />
+      <button className='bg-white py-2 px-8 text-xl shadow-xl absolute bottom-3 left-[50%] translate-x-[-50%] hover:bg-[#e65540] hover:text-white'>BAGS</button>
+    </div>
+    <div className='relative overflow-hidden w-full'>
+      <img src={Images.ass} alt="" className='hover:scale-110 duration-700 w-full h-[40vh]' />
+      <button className='bg-white py-2 px-8 text-xl shadow-xl absolute bottom-3 left-[50%] translate-x-[-50%] hover:bg-[#e65540] hover:text-white'>ACCESSORIES</button>
+    </div>
+  </div>
+</div>
           <div className="relative w-full mb-5">
                 <Slider ref={sliderRef2} className="overflow-hidden " {...settings}>
                     <div className="relative flex w-[100vw] h-[80vh] items-center   ">
