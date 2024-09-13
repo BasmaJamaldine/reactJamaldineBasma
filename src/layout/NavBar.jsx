@@ -7,7 +7,7 @@ import { FaShopify } from "react-icons/fa";
 
 const NavBar = () => {
     return (
-        <div className='flex justify-around shadow-2xl py-5 justify-items-center'>
+        <div className='flex justify-around shadow-2xl py-5 justify-items-center '>
             <div><img src={Images.logo} alt="" /></div>
             <div className='flex gap-10 text-lg'>
                 <div className='active:text-red-600 hover:border-b-2 hover:border-black'><a href="" >Home</a></div>
