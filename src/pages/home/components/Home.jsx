@@ -168,7 +168,7 @@ export const Home = () => {
                                             ADD TO CART
                                         </button>
                                     </div>
-                                    <p className="text-black pt-6 text-lg opacity-70">{item.title}</p>
+                                    <p className="text-black pt-6 text-lg opacity-70"  onClick={() =>  goTo(`/shop/${item.id}`)}>{item.title}</p>
                                     <p className="text-black text-lg opacity-70">{item.price}</p>
                                 </div>
                             ))}

@@ -6,6 +6,9 @@ export default {
     img5: require("../assets/images/img5.webp"),
     img6: require("../assets/images/img6.webp"),
     img7: require("../assets/images/img7.webp"),
-    img8: require("../assets/images/img8.jpg")
+    img8: require("../assets/images/img8.jpg"),
+    blog1: require("../assets/images/blog-01.jpg"),
+    blog2: require("../assets/images/blog-02.jpg"),
+    blog3: require("../assets/images/blog-03.jpg"),
    
 }

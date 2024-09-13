@@ -6,6 +6,7 @@ import NavBar from "./layout/NavBar";
 import Footer from "./layout/footer";
 import { Shop } from "./pages/shop/components/Shop";
 import DetShop from "./pages/detaille/components/DetShop";
+import Blog from "./pages/blog/components/Blog"
 function App() {
   return (
     <>
@@ -15,6 +16,7 @@ function App() {
       <Route path="/about" element={<About />} /><Route/>
       <Route path="/shop" element={<Shop/>} /><Route/>
       <Route path="/shop/:id" element={<DetShop />} /><Route/>
+      <Route path="/blog" element={<Blog/>} /><Route/>
     </Routes>
     <Footer/>
     
