@@ -15,11 +15,11 @@ import { useState } from "react";
 import { Cart } from "./pages/cart/components/cart";
 function App() {
   const [cart, setCart] = useState([]);
-  const cartItems = cart.length;
+  
   return (
     <>
     <MyProvider>
-    <NavBar cartItems={cartItems}/>
+    <NavBar cartItems={cart.length} cart={cart}/>
     <Routes>
       <Route path="/" element={<Home />} /><Route/>
       <Route path="/about" element={<About />} /><Route/>
@@ -29,7 +29,7 @@ function App() {
       <Route path="/contact" element={<Contact/>} /><Route/>
       <Route path="/signin" element={<SignIn/>} /><Route/>
       <Route path="/signup" element={<SignUp/>} /><Route/>
-      <Route path="/cart/:id" element={<Cart />} /><Route/>
+      <Route path="/cart/:id" element={<Cart cart={cart}  />} /><Route/>
     </Routes>
     <Footer/>
     </MyProvider>

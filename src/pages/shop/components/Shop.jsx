@@ -1,35 +1,47 @@
-import React, { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import data from "../../../json/data.json";
 import { useNavigate } from 'react-router-dom';
 import { Images } from '../../../assets';
 import { images } from '../../../constants';
+import { useState } from 'react';
 
-const Shop = () => {
-    let goTo = useNavigate();
-    const [cart, setCart] = useState([]);
-    const [selectedFilter, setSelectedFilter] = useState("");
-    const [selectedColors, setSelectedColors] = useState([]);
+const Shop = ({ setCart }) => {
+  let goTo = useNavigate();
+  const [selectedFilter, setSelectedFilter] = useState("");
+  const [selectedColors, setSelectedColors] = useState([]);
 
-    const handleFilter = (e) => {
-        setSelectedFilter(e.target.value);
-    };
+  const handleFilter = (e) => {
+    setSelectedFilter(e.target.value);
+  };
 
-    const handleColorChange = (color) => {
-        if (selectedColors.includes(color)) {
-            setSelectedColors(selectedColors.filter(e => e !== color)); 
-        } else {
-            setSelectedColors([...selectedColors, color]); 
-        }
-    };
-    const addToCart = (item) => {
-        setCart([...cart, item]);
-    };
-    const filteredData = data.filter(item => {
-        const matchesFilter = selectedFilter ? item.type.toLowerCase() === selectedFilter.toLowerCase() : true;
-        const matchesColor = selectedColors.length > 0 ? selectedColors.includes(item.color.toLowerCase()) : true;
-        return matchesFilter && matchesColor;
+  const handleColorChange = (color) => {
+    if (selectedColors.includes(color)) {
+      setSelectedColors(selectedColors.filter(e => e !== color)); 
+    } else {
+      setSelectedColors([...selectedColors, color]); 
+    }
+  };
+
+  const addToCart = (item) => {
+    setCart((prevItems) => {
+      const isItemInCart = prevItems.find(cartItem => cartItem.id === item.id);
+
+      if (isItemInCart) {
+        return prevItems.map(cartItem =>
+          cartItem.id === item.id
+            ? { ...cartItem, quantity: cartItem.quantity + 1 }
+            : cartItem
+        );
+      }
+
+      return [...prevItems, { ...item, quantity: 1 }];
     });
+  };
+
+  const filteredData = data.filter(item => {
+    const matchesFilter = selectedFilter ? item.type.toLowerCase() === selectedFilter.toLowerCase() : true;
+    const matchesColor = selectedColors.length > 0 ? selectedColors.includes(item.color.toLowerCase()) : true;
+    return matchesFilter && matchesColor; });
 
     return (
         <>
@@ -119,19 +131,19 @@ const Shop = () => {
 
                     <div className='flex flex-wrap pt-10 gap-8'>
                         {filteredData.length > 0 ? (
-                            filteredData.map((e) => (
-                                <div key={e.id} className='flex flex-col w-[30%]'>
+                            filteredData.map((item) => (
+                                <div key={item.id} className='flex flex-col w-[30%]'>
                                     <div className='relative group'>
-                                        <img src={images[e.affiche]} alt={e.name} className='w-[100%] transition-all duration-300 ease-in-out group-hover:brightness-75' />
+                                        <img src={images[item.affiche]} alt={item.name} className='w-[100%] transition-all duration-300 ease-in-out group-hover:brightness-75' />
                                         <div className='absolute top-[90%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
                                             <button className='bg-white py-3 px-12 w-[210px] rounded-full text-black transition duration-500 hover:bg-[#e65540] hover:text-[#fff]'
-                                            onClick={() => addToCart(e)}
+                                           onClick={() => addToCart(item)}
                                             >ADD TO CART</button>
                                         </div>
                                     </div>
                                     <div className='pt-5'>
-                                        <p className='text-[#555] pb-2 transition duration-500 hover:text-[#e65540] cursor-pointer'>{e.name}</p>
-                                        <p className='text-[#555] pb-2'>{e.price}</p>
+                                        <p className='text-[#555] pb-2 transition duration-500 hover:text-[#e65540] cursor-pointer'>{item.name}</p>
+                                        <p className='text-[#555] pb-2'>{item.price}</p>
                                     </div>
                                 </div>
                             ))
